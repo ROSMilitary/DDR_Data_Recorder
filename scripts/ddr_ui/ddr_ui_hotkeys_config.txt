@@ -1,0 +1,46 @@
+|-| LATENCY |-|
+Long idle time between user request and action
+Long entry time for user input
+.
+|-| FIDELITY |-|
+Action not consistent with user request
+Error in user input
+Error in system feedback
+.
+|-| LOGISTIC INTERVENTION |-|
+Gear Shift Failure
+Vehicle Failure
+User Error
+Test Course Intrusion
+Lost Communications
+Lost Localization
+Improper Test Set-up/Conduct
+.
+|-| PERFORMANCE INTERVENTION |-|
+Obstacle Negotiation
+Manually Stopped to Avoid Collision
+Poor Route/Path Planning
+Unexpected Behavior
+Vehicle Manually Moved or Restarted
+Failure to Make or Move in Formation
+Unknown
+.
+|-| VELOCITY |-|
+Extreme High Speed
+Extreme Low Speed
+Inconsistency in Speed
+Significant Speed Reductions
+Significant Stopping
+Reversals in Direction
+.
+|-| TRAJECTORY |-|
+Left-Right Weaving
+Poor Road Centering
+Inefficient Path Choices
+Unnecessarily Sharp Turning Motions
+.
+|-| SEPARABILITY |-|
+[VEHICLE] Collision or Near-Collision with Vehicle
+[OBSTACLE] Collision or Near-Collision with Obstacle
+Violation of No-Go Zone
+Violation of Formation Configuration

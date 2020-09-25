@@ -1,0 +1,168 @@
+<!--******************************************************************************
+PROJECT: DDR
+
+ PACKAGE         :
+ ORIGINAL AUTHOR :
+ MODIFIED DATE   :
+ MODIFIED BY     :
+ REVISION        :
+
+ Copyright (c) 2020 DCS Corporation
+
+ Unlimited Rights assigned to the U.S. Government
+
+ This material may be reproduced by or for the U.S Government pursuant
+ to the copyright license under the clause at DFARS 252.227-7013.  This
+ notice must appear in all copies of this file and its derivatives.
+******************************************************************************
+
+Copyright (c) 2019-2020 U.S. Federal Government (in countries where recognized)
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+-->
+
+<data>
+  <!--CONDITION LIST: conditional triggers for topic selection-->
+   <conditionList>
+      <networkUsage value="false" />
+      <diskWarning value="false" />
+      <topicGroup value="manual" />
+
+      <!-- Space-separated list of all the profiles to include -->
+      <profiles value="" />
+   </conditionList>
+
+
+      <!-- GROUPLIST: List of different topic groups.
+      Groups can be additive or subtractive. -->
+      <!-- Group Types:
+      add - Additive set.
+      subtract - Subtractive set.
+      required - Every bag should require
+      -->
+   <groupList>
+      <!-- Topics that should always be included -->
+      <whitelist type="required">
+		  <!--DDR INTERNAL TOPICS (recommended to NOT remove these)-->
+		  /ddr/andBeyonder
+      /ddr/event
+      /ddr/rg/software_versions
+      /ddr/provisional_topic
+      /ddr/timeline/hotkeys
+      </whitelist>
+
+      <!-- Topics that should never be included if network concerns -->
+      <networkUsage type="subtract" cond="networkUsage"></networkUsage>
+
+      <diskWarning type="subtract" cond="diskWarning"></diskWarning>
+
+      <!-- Nodes with children are treated as groups. -->
+      <!-- This is your main topic switching block. Do not rename topicGroup
+      or remove it. You can, however, add as many sub groups as you want to
+      with various add, subtract, etc. with the rule "one" there can only be
+      one active option within this group. If you want other groups to conditionally
+      activate, the logic must be added to the code as well.-->
+      <topicGroup rule="one" cond="topicGroup" match="tag">
+         <!-- With the rule "one" the first one to evaluate as true is
+              processed and the rest of the group is ignored.-->
+         <manual type="add">
+           <!--YOUR TOPICS HERE-->
+
+         </manual>
+
+         <idle type="add">
+           <!--YOUR TOPICS HERE-->
+
+         </idle>
+
+    		 <teleop type="add">
+           <!--YOUR TOPICS HERE-->
+
+         </teleop>
+
+		     <all_autonomy type="add">
+           <!--YOUR TOPICS HERE-->
+
+         </all_autonomy>
+
+
+    		 <estop type="add">
+           <!--YOUR TOPICS HERE-->
+
+         </estop>
+
+         <kickstart type="add">
+           <!--YOUR DEFAULT RECORDING TOPICS HERE-->
+           <!--This is what ddr will start recording on launch-->
+
+         </kickstart>
+
+         <example_group type="add">
+           <!--YOUR TOPICS HERE-->
+           <!--this is an example - you can add as many subgroups as you want-->
+
+         </example_group>
+
+      </topicGroup>
+
+      <profiles rule="all" cond="profiles" match="tag">
+         <!-- With the rule "all," all of the ones that evaluate as true are processed. -->
+         <klint type="nsAdd">
+           /iron /man
+         </klint>
+
+         <sky type="subtract">
+           /unlucky
+         </sky>
+
+         <nick type="required">
+           /cool /beans
+         </nick>
+
+         <brandon type="add">
+           /coffee /dreams
+         </brandon>
+
+         <lazaro type="add">
+           /husband-to-a-wife /son-to-a-father
+         </lazaro>
+
+         <logan type="add">
+           /ye /ti /co /fee
+         </logan>
+
+         <corbin type="add">
+           /gone /too /soon
+         </corbin>
+
+      </profiles>
+    </groupList>
+  </data>
