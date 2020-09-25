@@ -2,6 +2,9 @@
 
 
 #******************************************************************************
+#
+#"Distribution A: Approved for public release; distribution unlimited. OPSEC #4046"
+#
 #PROJECT: DDR
 #
 # PACKAGE         :

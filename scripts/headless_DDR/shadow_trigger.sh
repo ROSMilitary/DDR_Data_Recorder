@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# running this script will initiate a shadow record
-
 
 #******************************************************************************
+#
+#"Distribution A: Approved for public release; distribution unlimited. OPSEC #4046"
+#
 #PROJECT: DDR
 #
 # PACKAGE         :
@@ -51,6 +52,8 @@
 #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
+
+# running this script will initiate a shadow record
 
 
 rostopic pub -1 /ddr/event ddr_data_recorder/Event "{eventID: 'button press', eventType: 'shadow record',

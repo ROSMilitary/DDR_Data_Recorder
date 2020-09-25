@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# script will publish on the ddr/event topic and takes "string" "string" "bool" "bool" "string" parameters
-
 #******************************************************************************
+#
+#"Distribution A: Approved for public release; distribution unlimited. OPSEC #4046"
+#
 #PROJECT: DDR
 #
 # PACKAGE         :
@@ -51,6 +52,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+
+# script will publish on the ddr/event topic and takes "string" "string" "bool" "bool" "string" parameters
 
 
 rostopic pub /ddr/event ddr_data_recorder/Event "{eventID: $1, eventType: $2, dynamicRecord: $3,

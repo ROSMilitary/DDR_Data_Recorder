@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# this script can be run from the terminal with an optional recording name entered as a parameter
-# running this script once will start a manual record
-# running this script a second time will end a manual record
 
 #******************************************************************************
+#
+#"Distribution A: Approved for public release; distribution unlimited. OPSEC #4046"
+#
 #PROJECT: DDR
 #
 # PACKAGE         :
@@ -54,6 +54,9 @@
 #  limitations under the License.
 
 
+# this script can be run from the terminal with an optional recording name entered as a parameter
+# running this script once will start a manual record
+# running this script a second time will end a manual record
 
 if [ "$1" = "" ];
 then recName="manual"
