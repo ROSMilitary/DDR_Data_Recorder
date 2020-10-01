@@ -365,7 +365,7 @@ def compare_keys(bag_message, current_key, key):
         ret_val = and_beyond_handler(current_key, key)
 
     # Handle /special topic
-elif bag_message.topic == '/special':
+    elif bag_message.topic == '/special':
         ret_val = special_handler(current_key, key)
 
 
